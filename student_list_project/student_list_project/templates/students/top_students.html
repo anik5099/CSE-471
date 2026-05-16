@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Students</title>
+</head>
+<body>
+    <h1>Top Students</h1>
+    <p>Students with CGPA 3.70 or above are shown here.</p>
+
+    {% if students %}
+        <ul>
+            {% for student in students %}
+                <li>
+                    {{ student.name }} - {{ student.department }} - CGPA: {{ student.cgpa }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No top students found.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
