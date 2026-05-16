@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+</head>
+<body>
+    <h1>Add New Task</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Task Title:</label>
+        <input type="text" name="task_title" placeholder="Example: Complete Django homework">
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <br>
+    <a href="/">Back to Home</a>
+    <br>
+    <a href="/tasks/">View Task List</a>
+</body>
+</html>

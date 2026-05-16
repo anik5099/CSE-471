@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+
+    {% if tasks %}
+        <ol>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+        </ol>
+
+        <a href="/clear-tasks/">Clear All Tasks</a>
+    {% else %}
+        <p>No tasks added yet.</p>
+    {% endif %}
+
+    <br><br>
+    <a href="/add-task/">Add Another Task</a>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
